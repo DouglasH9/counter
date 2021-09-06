@@ -1,0 +1,11 @@
+h1 {
+    text-align: center;
+}
+button {
+    margin: 20px;
+}
+#btnwrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
