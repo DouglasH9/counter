@@ -11,10 +11,14 @@
 </head>
 <body>
     <h1 class="display-1">Counter</h1>
-    <h1 class="display-3">{{counter}}</h1>
+    <h1 class="display-3">{{session['counter']}} visit(s)!</h1>
     <div id="btnwrap">
-        <button type="button" class="btn btn-primary" name="add_visits" value="addvisits" method='POST'>Add 2 Visits!</button>
-        <button type="button" class="btn btn-danger" name="reset" value="reset" method="POST">Warning: RESET!</button>
+        <form action="http://localhost:5000">
+            <button type="submit" class="btn btn-primary" name="add_visits" value="counter" method='POST'>Add a Visit!</button>
+        </form>
+        <form action="http://localhost:5000/reset">
+            <button type="submit" class="btn btn-danger" name="reset" value="reset" method="POST">Warning: RESET!</button>
+        </form>
     </div>
 </body>
 </html>
