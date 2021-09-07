@@ -4,16 +4,18 @@ app.secret_key = 'omar comin!'
 
 @app.route('/')
 def log_visits():
-    counter = 1
-    if button.form() == 'addvisits':
-        counter += 2
-    session['reset'] = request.form['reset']
+    
+    if 'counter' not in session:
+        session['counter']=0
+    else:
+        session['counter'] += 1
 
-    return redirect('/show')
+    return render_template('/index.html')
 
-@app.route('/show')
-def show_info():
-    return render_template('index.html')
+@app.route('/reset')
+def reset():
+    session.clear()
+    return redirect('/')
 
 if __name__=="__main__":
     app.run(debug=True)
